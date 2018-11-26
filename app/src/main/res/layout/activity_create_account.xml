@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Email"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText7"
+            android:layout_alignStart="@+id/btnCreateAccount"
+            android:layout_alignEnd="@+id/btnCreateAccount"
+            android:layout_marginBottom="366dp" android:layout_marginStart="-2dp" android:layout_marginEnd="2dp"/>
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Prenom"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText8"
+            android:layout_alignStart="@+id/btnCreateAccount"
+            android:layout_alignEnd="@+id/btnCreateAccount"
+            android:layout_marginBottom="433dp" android:layout_marginStart="0dp" android:layout_marginEnd="0dp"/>
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nom"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText9"
+            android:layout_alignStart="@+id/btnCreateAccount"
+            android:layout_alignEnd="@+id/btnCreateAccount"
+            android:layout_marginBottom="497dp" android:layout_marginStart="1dp" android:layout_marginEnd="-1dp"/>
+    <Button
+            android:text="Inscription"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#B40037"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btnCreateAccount"
+            android:layout_marginBottom="41dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginStart="29dp"/>
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Telephone"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText3"
+            android:layout_alignStart="@+id/btnCreateAccount"
+            android:layout_alignEnd="@+id/btnCreateAccount"
+            android:layout_marginBottom="99dp"/>
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Retaper votre mot de passe"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText4"
+            android:layout_alignStart="@+id/btnCreateAccount"
+            android:layout_alignEnd="@+id/btnCreateAccount"
+            android:layout_marginBottom="164dp" android:layout_marginStart="0dp" android:layout_marginEnd="0dp"/>
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Mot de passe"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText5"
+            android:layout_alignStart="@+id/btnCreateAccount"
+            android:layout_alignEnd="@+id/btnCreateAccount"
+            android:layout_marginBottom="235dp" android:layout_marginStart="0dp" android:layout_marginEnd="0dp"/>
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Identifiant"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText6"
+            android:layout_alignStart="@+id/btnCreateAccount"
+            android:layout_alignEnd="@+id/btnCreateAccount"
+            android:layout_marginBottom="298dp" android:layout_marginStart="-1dp" android:layout_marginEnd="1dp"/>
+</RelativeLayout>

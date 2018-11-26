@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Identifiant"
+            android:textColor="#B40037"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText"
+            android:layout_marginBottom="204dp"
+            android:layout_alignStart="@+id/btnConnexion"
+            android:layout_alignEnd="@id/btnConnexion"/>
+    <EditText
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Identifiant"
+            android:textColor="#B40037"
+            android:ems="10"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/editText2"
+            android:layout_marginBottom="145dp"
+            android:layout_alignStart="@+id/btnConnexion"
+            android:layout_alignEnd="@id/btnConnexion"/>
+    <Button
+            android:text="Connexion"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#B40037"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btnConnexion"
+            android:layout_marginBottom="87dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="29dp"
+            android:layout_marginStart="29dp"/>
+</RelativeLayout>
