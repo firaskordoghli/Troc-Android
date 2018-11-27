@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/navigation_songs"
+            android:icon="@drawable/home"
+            android:title="acceuil"/>
+
+    <item
+            android:id="@+id/navigation_albums"
+            android:icon="@drawable/users"
+            android:title="profil"/>
+
+    <item
+            android:id="@+id/navigation_artists"
+            android:icon="@drawable/repeat"
+            android:title="troquer"/>
+</menu>
