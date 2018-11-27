@@ -13,16 +13,22 @@ class HomeActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_songs -> {
+            R.id.navigation_acceuils -> {
                 toolbar.title = "Home"
                 val homeFragment = HomeFragment.newInstance()
                 openFragment(homeFragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_albums -> {
+            R.id.navigation_profils -> {
                 toolbar.title = "Profile"
                 val profileFragment = ProfileFragment.newInstance()
                 openFragment(profileFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_troquer -> {
+                toolbar.title = "troquer"
+                val troquerFragment = TroquerFragment.newInstance()
+                openFragment(troquerFragment)
                 return@OnNavigationItemSelectedListener true
             }
         }
