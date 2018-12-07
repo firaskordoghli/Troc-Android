@@ -20,14 +20,14 @@
             android:supportsRtl="true"
             android:usesCleartextTraffic="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".session.CreateAccountActivity">
+        <activity android:name=".session.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".session.LoginActivity"/>
+        <activity android:name=".session.CreateAccountActivity"/>
         <activity android:name=".HomeActivity"/>
         <activity android:name=".MainActivity"/>
         <!--

@@ -66,8 +66,7 @@ class CreateAccountActivity : AppCompatActivity() {
         }
 
         //creating volley string request
-        val stringRequest = object : StringRequest(Request.Method.POST,
-            EndPoints.URL_CREATE_ACCOUNT,
+        val stringRequest = object : StringRequest(Request.Method.POST,EndPoints.URL_CREATE_ACCOUNT,
             Response.Listener<String> { response ->
                 try {
                     val obj = JSONObject(response)
