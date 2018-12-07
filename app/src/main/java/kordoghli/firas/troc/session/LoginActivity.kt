@@ -1,11 +1,12 @@
-package kordoghli.firas.troc
+package kordoghli.firas.troc.session
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import kordoghli.firas.troc.R
 
-class CreateAccountActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_account)
+        setContentView(R.layout.activity_login)
     }
 }

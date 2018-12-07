@@ -16,14 +16,6 @@
             android:layout_alignParentTop="true"
             android:id="@+id/textView11"
             android:layout_marginTop="23dp"/>
-    <com.google.android.gms.maps.MapView
-            android:layout_width="353dp"
-            android:layout_height="337dp"
-            android:id="@+id/mapView"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="76dp"
-            android:layout_alignStart="@+id/textView11"
-            android:layout_alignEnd="@+id/textView11"/>
     <Button
             android:text="etape1"
             android:textColor="@android:color/white"
@@ -35,4 +27,12 @@
             android:layout_alignStart="@+id/textView11"
             android:layout_alignEnd="@+id/textView11"
             android:layout_marginBottom="104dp"/>
+    <FrameLayout
+            android:layout_width="353dp"
+            android:layout_height="328dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="101dp">
+
+    </FrameLayout>
 </RelativeLayout>
