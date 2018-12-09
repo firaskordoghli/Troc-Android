@@ -49,8 +49,8 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext, obj.getString("msg"), Toast.LENGTH_SHORT).show()
                         //getting the user from the response
                         val userJson = obj.getJSONObject("data")
-                        //starting the profile activity
                         finish()
+                        //startActivity(Intent(applicationContext, HomeActivity::class.java))
                         startActivity(Intent(applicationContext, HomeActivity::class.java))
                     } else {
                         Toast.makeText(applicationContext, obj.getString("msg"), Toast.LENGTH_SHORT).show()
@@ -70,7 +70,6 @@ class LoginActivity : AppCompatActivity() {
                 return params
             }
         }
-
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
     }
 }

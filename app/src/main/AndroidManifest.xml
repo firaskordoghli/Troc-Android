@@ -20,7 +20,7 @@
             android:supportsRtl="true"
             android:usesCleartextTraffic="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".session.LoginActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -28,8 +28,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".session.CreateAccountActivity"/>
-        <activity android:name=".HomeActivity"/>
+        <activity android:name=".session.LoginActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".troquer.TroquerActivity"
+                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".HomeActivity"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

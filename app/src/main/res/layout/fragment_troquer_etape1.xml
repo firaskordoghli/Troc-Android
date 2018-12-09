@@ -23,7 +23,7 @@
             android:layout_width="342dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:id="@+id/button"
+            android:id="@+id/toEtape2"
             android:layout_alignStart="@+id/textView11"
             android:layout_alignEnd="@+id/textView11"
             android:layout_marginBottom="104dp"/>
