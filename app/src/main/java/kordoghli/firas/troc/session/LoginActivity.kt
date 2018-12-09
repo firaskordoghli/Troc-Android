@@ -20,6 +20,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val preference = SharedPrefManager(this)
+        if (preference.isLoggedIn()){
+            finish()
+            startActivity(Intent(applicationContext,HomeActivity::class.java))
+        }
         btnConnexion.setOnClickListener {
             login()
         }
@@ -27,14 +32,14 @@ class LoginActivity : AppCompatActivity() {
 
     private fun login(){
         if (TextUtils.isEmpty(identifiantLogin.text)) {
-            identifiantLogin.error = "champ obligatoire";
-            identifiantLogin.requestFocus();
-            return;
+            identifiantLogin.error = "champ obligatoire"
+            identifiantLogin.requestFocus()
+            return
         }
         if (TextUtils.isEmpty(motDePassLogin.text)) {
-            motDePassLogin.error = "champ obligatoire";
-            motDePassLogin.requestFocus();
-            return;
+            motDePassLogin.error = "champ obligatoire"
+            motDePassLogin.requestFocus()
+            return
         }
 
         //creating volley string request
@@ -49,8 +54,13 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext, obj.getString("msg"), Toast.LENGTH_SHORT).show()
                         //getting the user from the response
                         val userJson = obj.getJSONObject("data")
-                        finish()
-                        //startActivity(Intent(applicationContext, HomeActivity::class.java))
+                        val user = User(
+                            userJson.getInt("Id"),
+                            userJson.getString("username"),
+                            userJson.getString("email")
+                        )
+                        SharedPrefManager(applicationContext).setUser(user)
+                        println("**********")
                         startActivity(Intent(applicationContext, HomeActivity::class.java))
                     } else {
                         Toast.makeText(applicationContext, obj.getString("msg"), Toast.LENGTH_SHORT).show()

@@ -1,5 +1,6 @@
 package kordoghli.firas.troc.session
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
@@ -8,9 +9,7 @@ import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
-import kordoghli.firas.troc.EndPoints
-import kordoghli.firas.troc.R
-import kordoghli.firas.troc.VolleySingleton
+import kordoghli.firas.troc.*
 import kotlinx.android.synthetic.main.activity_create_account.*
 import org.json.JSONException
 import org.json.JSONObject
