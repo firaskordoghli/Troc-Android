@@ -1,10 +1,8 @@
-package kordoghli.firas.troc
+package kordoghli.firas.troc.data
 
 import android.content.Context
 import android.content.Intent
-import android.preference.PreferenceManager
-import kordoghli.firas.troc.session.LoginActivity
-import kordoghli.firas.troc.session.User
+import kordoghli.firas.troc.UI.LoginActivity
 
 class SharedPrefManager (context: Context) {
 
@@ -34,9 +32,9 @@ class SharedPrefManager (context: Context) {
 
     fun getUser() : User {
         return User(
-            preference.getInt(KEY_USER_ID,-1),
-            preference.getString(KEY_USERNAME,""),
-            preference.getString(KEY_EMAIL,"")
+            preference.getInt(KEY_USER_ID, -1),
+            preference.getString(KEY_USERNAME, ""),
+            preference.getString(KEY_EMAIL, "")
         )
     }
 

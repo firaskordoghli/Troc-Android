@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.troquer
+package kordoghli.firas.troc.UI
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

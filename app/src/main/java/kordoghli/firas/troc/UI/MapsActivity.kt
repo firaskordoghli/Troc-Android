@@ -1,4 +1,4 @@
-package kordoghli.firas.troc
+package kordoghli.firas.troc.UI
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +9,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kordoghli.firas.troc.R
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 

@@ -1,8 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent" tools:layout_editor_absoluteY="25dp">
 
+    <RelativeLayout
+            android:background="#B40037"
+            android:layout_width="411dp"
+            android:layout_height="0dp"
+            android:id="@+id/relativeLayout3"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="70dp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewId">
+
+        <ImageView
+                android:layout_width="171dp"
+                android:layout_height="176dp" app:srcCompat="@drawable/profileimg"
+                android:id="@+id/imageView3" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+                android:layout_marginTop="19dp"/>
+        <TextView
+                android:text="Nom d'utilisateur"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/textViewUserName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" android:layout_alignParentBottom="true"
+                android:layout_marginBottom="16dp"
+                android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
     <TextView
             android:text="Nom d'utilisateur"
             android:textSize="20dp"
@@ -10,26 +41,34 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
+            android:id="@+id/textViewId"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
+            android:layout_marginBottom="23dp" app:layout_constraintBottom_toTopOf="@+id/textViewEmail"/>
+    <TextView
+            android:text="Nom d'utilisateur"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-            android:layout_alignParentTop="true"
-            android:id="@+id/textView2"
-            android:layout_marginTop="80dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/imageView3"/>
-    <ImageView
-            android:layout_width="0dp"
-            app:layout_constraintWidth_percent="0.25"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.20"
-            android:layout_marginTop="25dp"
-            app:srcCompat="@drawable/user"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/imageView3"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/textView2"/>
+            android:id="@+id/textViewEmail"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textViewId"
+            android:layout_marginBottom="24dp" app:layout_constraintBottom_toTopOf="@+id/btnLogOut"/>
+
+    <Button
+            android:text="logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLogOut"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEmail" android:layout_marginBottom="194dp"/>
 
 
 </android.support.constraint.ConstraintLayout>

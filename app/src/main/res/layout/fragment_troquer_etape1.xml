@@ -1,38 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <TextView
-            android:text="Emplacement:"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_width="382dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="29dp"
-            android:layout_marginEnd="29dp"
-            android:layout_alignParentTop="true"
-            android:id="@+id/textView11"
-            android:layout_marginTop="23dp"/>
+
     <Button
-            android:text="etape1"
+            android:text="suivant"
             android:textColor="@android:color/white"
             android:backgroundTint="#B40037"
-            android:layout_width="342dp"
-            android:layout_height="wrap_content"
+            android:layout_width="138dp"
+            android:layout_height="49dp"
             android:layout_alignParentBottom="true"
             android:id="@+id/toEtape2"
-            android:layout_alignStart="@+id/textView11"
-            android:layout_alignEnd="@+id/textView11"
-            android:layout_marginBottom="104dp"/>
-    <FrameLayout
-            android:layout_width="353dp"
-            android:layout_height="328dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="101dp">
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"/>
+    <TextView
+            android:text="spécifier votre emplacement :  "
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView9" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="32dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"/>
 
-    </FrameLayout>
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

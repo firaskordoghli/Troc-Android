@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.session
+package kordoghli.firas.troc.data
 
 data class User (val id: Int, val username: String, var email: String)  {
 

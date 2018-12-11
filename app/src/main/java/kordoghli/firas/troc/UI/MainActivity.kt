@@ -1,9 +1,8 @@
-package kordoghli.firas.troc
+package kordoghli.firas.troc.UI
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v7.app.ActionBar
+import kordoghli.firas.troc.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

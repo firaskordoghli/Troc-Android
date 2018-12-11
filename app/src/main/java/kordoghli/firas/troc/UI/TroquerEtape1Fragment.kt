@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.troquer
+package kordoghli.firas.troc.UI
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kordoghli.firas.troc.R
-import kotlinx.android.synthetic.main.fragment_troquer.view.*
 import kotlinx.android.synthetic.main.fragment_troquer_etape1.view.*
 
 

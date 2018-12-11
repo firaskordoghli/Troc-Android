@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.session
+package kordoghli.firas.troc.UI
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -13,7 +13,10 @@ import org.json.JSONException
 import org.json.JSONObject
 import android.content.Intent
 import kordoghli.firas.troc.*
-
+import kordoghli.firas.troc.data.EndPoints
+import kordoghli.firas.troc.data.SharedPrefManager
+import kordoghli.firas.troc.data.User
+import kordoghli.firas.troc.data.VolleySingleton
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         val preference = SharedPrefManager(this)
         if (preference.isLoggedIn()){
             finish()
-            startActivity(Intent(applicationContext,HomeActivity::class.java))
+            startActivity(Intent(applicationContext, HomeActivity::class.java))
         }
         btnConnexion.setOnClickListener {
             login()
