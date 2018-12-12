@@ -30,7 +30,7 @@
         <activity android:name=".UI.CreateAccountActivity"/>
         <activity android:name=".UI.HomeActivity"/>
         <activity android:name=".UI.MainActivity"/>
-        <activity android:name=".UI.TroquerActivity"
+        <activity android:name=".UI.troquer.TroquerActivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
