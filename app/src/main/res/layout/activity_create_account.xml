@@ -1,95 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent" android:id="@+id/relativeLayout4"
+                                             tools:layout_editor_absoluteY="25dp">
 
     <EditText
-            android:layout_width="342dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Email"
             android:ems="10"
-            android:layout_alignParentBottom="true"
             android:id="@+id/editText7"
-            android:layout_alignStart="@+id/btnCreateAccount"
-            android:layout_alignEnd="@+id/btnCreateAccount"
-            android:layout_marginBottom="366dp" android:layout_marginStart="-2dp" android:layout_marginEnd="2dp"/>
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText8" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp"/>
     <EditText
-            android:layout_width="342dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Prenom"
             android:ems="10"
-            android:layout_alignParentBottom="true"
             android:id="@+id/editText8"
-            android:layout_alignStart="@+id/btnCreateAccount"
-            android:layout_alignEnd="@+id/btnCreateAccount"
-            android:layout_marginBottom="433dp" android:layout_marginStart="0dp" android:layout_marginEnd="0dp"/>
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText9" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp"/>
     <EditText
-            android:layout_width="342dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Nom"
             android:ems="10"
-            android:layout_alignParentBottom="true"
             android:id="@+id/editText9"
-            android:layout_alignStart="@+id/btnCreateAccount"
-            android:layout_alignEnd="@+id/btnCreateAccount"
-            android:layout_marginBottom="497dp" android:layout_marginStart="1dp" android:layout_marginEnd="-1dp"/>
-    <Button
-            android:text="Inscription"
-            android:textColor="@android:color/white"
-            android:backgroundTint="#B40037"
-            android:layout_width="342dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:id="@+id/btnCreateAccount"
-            android:layout_marginBottom="41dp"
-            android:layout_marginEnd="29dp"
-            android:layout_marginStart="29dp"/>
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="24dp"/>
     <EditText
-            android:layout_width="342dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Telephone"
             android:ems="10"
-            android:layout_alignParentBottom="true"
             android:id="@+id/editText3"
-            android:layout_alignStart="@+id/btnCreateAccount"
-            android:layout_alignEnd="@+id/btnCreateAccount"
-            android:layout_marginBottom="99dp"/>
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText4" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp"/>
     <EditText
-            android:layout_width="342dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Retaper votre mot de passe"
             android:ems="10"
-            android:layout_alignParentBottom="true"
             android:id="@+id/editText4"
-            android:layout_alignStart="@+id/btnCreateAccount"
-            android:layout_alignEnd="@+id/btnCreateAccount"
-            android:layout_marginBottom="164dp" android:layout_marginStart="0dp" android:layout_marginEnd="0dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText5" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp"/>
     <EditText
-            android:layout_width="342dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Mot de passe"
             android:ems="10"
-            android:layout_alignParentBottom="true"
             android:id="@+id/editText5"
-            android:layout_alignStart="@+id/btnCreateAccount"
-            android:layout_alignEnd="@+id/btnCreateAccount"
-            android:layout_marginBottom="235dp" android:layout_marginStart="0dp" android:layout_marginEnd="0dp"/>
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText6" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp"/>
     <EditText
-            android:layout_width="342dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Identifiant"
             android:ems="10"
-            android:layout_alignParentBottom="true"
             android:id="@+id/editText6"
-            android:layout_alignStart="@+id/btnCreateAccount"
-            android:layout_alignEnd="@+id/btnCreateAccount"
-            android:layout_marginBottom="298dp" android:layout_marginStart="-1dp" android:layout_marginEnd="1dp"/>
-</RelativeLayout>
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText7" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp"/>
+    <Button
+            android:text="Inscription"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#B40037"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCreateAccount"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText3" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp"/>
+    <TextView
+            android:text="welcome to the new world of dealing !!"
+            android:textColor="#B40037"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"/>
+</android.support.constraint.ConstraintLayout>

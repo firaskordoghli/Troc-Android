@@ -10,6 +10,7 @@ class SharedPrefManager (context: Context) {
     val KEY_USER_ID = "keyuserid"
     val KEY_USERNAME = "keyusername"
     val KEY_EMAIL = "keyemail"
+    val KEY_PHONE = "keyphone"
 
     val context = context
     val preference = context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE)
@@ -27,6 +28,7 @@ class SharedPrefManager (context: Context) {
         editor.putInt(KEY_USER_ID,user.id)
         editor.putString(KEY_USERNAME,user.username)
         editor.putString(KEY_EMAIL,user.email)
+        editor.putInt(KEY_PHONE,user.phone)
         editor.apply()
     }
 
@@ -34,7 +36,8 @@ class SharedPrefManager (context: Context) {
         return User(
             preference.getInt(KEY_USER_ID, -1),
             preference.getString(KEY_USERNAME, ""),
-            preference.getString(KEY_EMAIL, "")
+            preference.getString(KEY_EMAIL, ""),
+            preference.getInt(KEY_PHONE,0)
         )
     }
 

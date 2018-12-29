@@ -1,5 +1,6 @@
 package kordoghli.firas.troc.UI
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
@@ -22,12 +23,10 @@ class CreateAccountActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_account)
         btnCreateAccount.setOnClickListener {
             createAccount()
-            //val intent = Intent(applicationContext, HomeActivity::class.java)
-            //startActivity(intent)
         }
     }
 
-    private fun createAccount (){
+    public fun createAccount (){
 
         if (TextUtils.isEmpty(editText9.text)) {
             editText9.error = "champ obligatoire"
@@ -86,6 +85,7 @@ class CreateAccountActivity : AppCompatActivity() {
                 }
             }
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
+        startActivity(Intent(applicationContext, HomeActivity::class.java))
     }
 
 }

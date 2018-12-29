@@ -15,6 +15,7 @@ import com.android.volley.Response
 import com.android.volley.Response.ErrorListener
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
+import kordoghli.firas.troc.UI.troquer.TroquerActivity
 import kordoghli.firas.troc.data.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -29,42 +30,17 @@ class HomeFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.fragment_home, container, false)
-
-/*
-        val nom = arrayOf("ali", "med", "semi", "zied")
-        val prenom = arrayOf("ali", "med", "semi", "zied")
-        val listView = view.listViewHome
-
-        val data = ArrayList<HashMap<String, String>>()
-        for (i in nom.indices) {
-            val hp = HashMap<String, String>()
-            hp["titre"] = nom[i]
-            hp["despriction"] = prenom[i]
-            hp["imageView4"] = Integer.toString(R.drawable.profileimg)
-            data.add(hp)
-        }
-        val from = arrayOf("titre", "despriction", "imageView4")
-        val to = intArrayOf(
-            R.id.titre,
-            R.id.despriction,
-            R.id.imageView4
-        )
-        val adapter = SimpleAdapter(view.context, data, R.layout.list_home_item_prototype, from, to)
-        listView.adapter = adapter
-*/
-        AllService()
+        allService()
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-
     companion object {
         fun newInstance(): HomeFragment = HomeFragment()
     }
 
-    private fun AllService(){
-        var ServicetList = ArrayList<ResponseClasses.Service>()
+    private fun allService(){
         //creating volley string request
         //if everything is fine
         val data = ArrayList<HashMap<String, String>>()
@@ -88,6 +64,14 @@ class HomeFragment: Fragment() {
                     val to = intArrayOf(R.id.titre, R.id.description)
                     val adapter = SimpleAdapter(activity,data, R.layout.list_home_item_prototype, from, to)
                     listViewHome.adapter = adapter
+                    listViewHome.setOnItemClickListener { parent, view, position, id ->
+                        val objItem = jasonArray.getJSONObject(id.toInt())
+                        val intent = Intent(activity,DetailsServiceActivity::class.java)
+                        intent.putExtra("id",objItem.getInt("id"))
+                        startActivity(intent)
+
+                        //println(objItem.getInt("id"))
+                    }
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }
@@ -95,7 +79,6 @@ class HomeFragment: Fragment() {
             ErrorListener { error ->
                 Toast.makeText(activity, error.message, Toast.LENGTH_SHORT).show()
             }) {
-            @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String> {
                 val params = HashMap<String, String>()
                 params.put("username", identifiantLogin.text.toString())

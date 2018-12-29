@@ -2,6 +2,7 @@ package kordoghli.firas.troc.data
 
 class ResponseClasses {
 
-    data class Service (val id: Int, val titre: String, var description: String,
-                        val categorie: String, var type: String, var idUser: String)
+    data class Service (
+        var id: Int, var titre: String, var description: String,
+        var categorie: String, var type: String, var idUser: String)
 }

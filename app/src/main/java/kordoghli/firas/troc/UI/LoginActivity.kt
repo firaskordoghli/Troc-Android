@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.json.JSONException
 import org.json.JSONObject
 import android.content.Intent
+import android.view.View
 import kordoghli.firas.troc.*
 import kordoghli.firas.troc.data.EndPoints
 import kordoghli.firas.troc.data.SharedPrefManager
@@ -60,7 +61,8 @@ class LoginActivity : AppCompatActivity() {
                         val user = User(
                             userJson.getInt("Id"),
                             userJson.getString("username"),
-                            userJson.getString("email")
+                            userJson.getString("email"),
+                            0
                         )
                         SharedPrefManager(applicationContext).setUser(user)
                         println("**********")
@@ -84,5 +86,8 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
+    }
+    public fun toCreate(v:View){
+        startActivity(Intent(this, CreateAccountActivity::class.java))
     }
 }

@@ -1,5 +1,6 @@
 package kordoghli.firas.troc.UI
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -24,13 +25,19 @@ class ProfileFragment: Fragment() {
         textViewEmail.text = user.email
         textViewUserName.text = user.username
 
-
-        view.btnLogOut.setOnClickListener { view ->
+        view.cardDeconnect.setOnClickListener { view ->
             preference.logout()
+        }
+
+        view.cardProfil.setOnClickListener { view ->
+            //var profileInfoFragment = ProfileInfoFragment()
+            //fragmentManager!!.beginTransaction().replace(R.id.container,profileInfoFragment).commit()
+            startActivity(Intent(context,ProfileInfoAcrivity::class.java))
         }
     }
 
     companion object {
         fun newInstance(): ProfileFragment = ProfileFragment()
     }
+
 }
