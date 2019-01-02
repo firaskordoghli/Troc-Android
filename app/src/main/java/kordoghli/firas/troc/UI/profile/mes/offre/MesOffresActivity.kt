@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.UI.profile
+package kordoghli.firas.troc.UI.profile.mes.offre
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

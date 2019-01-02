@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.UI.profile
+package kordoghli.firas.troc.UI.profile.mes.offre
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -36,12 +36,11 @@ class MesOffresFragment : Fragment() {
     }
 
     private fun mesOffres(id: Int) {
-        var adapter: MesOffresAdapter? = null
+        var adapter: MesOffresAdapter?
         val data: ArrayList<ResponseClasses.Service> = ArrayList()
         //creating volley string request
         val stringRequest = object : StringRequest(
-            Request.Method.POST, EndPoints.URL_GET_All_SERVICE_User,
-            Response.Listener<String> { response ->
+            Request.Method.POST, EndPoints.URL_GET_All_SERVICE_USER,Response.Listener<String> { response ->
                 try {
                     //converting response to json object
                     val jasonArray = JSONArray(response)
@@ -69,7 +68,7 @@ class MesOffresFragment : Fragment() {
             }) {
             override fun getParams(): Map<String, String> {
                 val params = HashMap<String, String>()
-                params.put("idUser", id.toString())
+                params["idUser"] = id.toString()
                 return params
             }
         }

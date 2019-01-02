@@ -63,10 +63,9 @@ class LoginActivity : AppCompatActivity() {
                             userJson.getInt("Id"),
                             userJson.getString("username"),
                             userJson.getString("email"),
-                            0
+                            userJson.getInt("phone")
                         )
                         SharedPrefManager(applicationContext).setUser(user)
-                        println("**********")
                         startActivity(Intent(applicationContext, HomeActivity::class.java))
                     } else {
                         Toast.makeText(applicationContext, obj.getString("msg"), Toast.LENGTH_SHORT).show()

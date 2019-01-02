@@ -64,7 +64,7 @@ class ProfileCreateurActivity : AppCompatActivity() {
     private fun getServiceWithid(id: Int) {
         val data: ArrayList<ResponseClasses.Service> = ArrayList()
         //creating volley string request
-        val stringRequest = object : StringRequest(Request.Method.POST, EndPoints.URL_GET_All_SERVICE_User,
+        val stringRequest = object : StringRequest(Request.Method.POST, EndPoints.URL_GET_All_SERVICE_USER,
             Response.Listener<String> { response ->
                 try {
                     //converting response to json object
