@@ -33,6 +33,8 @@
         <activity android:name=".UI.HomeActivity"/>
         <activity android:name=".UI.profile.ProfileInfoAcrivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
+        <activity android:name=".UI.profile.MesOffresActivity"
+                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
         <activity android:name=".UI.MainActivity"/>
         <activity android:name=".UI.ProfileCreateurActivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>

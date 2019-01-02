@@ -28,6 +28,9 @@ class ProfileFragment: Fragment() {
         view.cardProfil.setOnClickListener { view ->
             startActivity(Intent(context, ProfileInfoAcrivity::class.java))
         }
+        view.cardMesOffre.setOnClickListener { View ->
+            startActivity(Intent(context, MesOffresActivity::class.java))
+        }
     }
 
     companion object {

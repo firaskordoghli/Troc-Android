@@ -51,7 +51,7 @@
             android:layout_marginBottom="48dp" app:layout_constraintBottom_toBottomOf="parent">
         <!-- Rol 1 -->
         <android.support.v7.widget.CardView
-                android:id="@+id/cardService"
+                android:id="@+id/cardMesOffre"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_columnWeight="1"

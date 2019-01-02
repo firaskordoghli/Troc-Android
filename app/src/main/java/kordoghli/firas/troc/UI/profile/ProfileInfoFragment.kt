@@ -10,9 +10,8 @@ import kordoghli.firas.troc.data.SharedPrefManager
 import kotlinx.android.synthetic.main.fragment_profile_info.*
 
 class ProfileInfoFragment: Fragment(){
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.fragment_profile_info, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_profile_info, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
