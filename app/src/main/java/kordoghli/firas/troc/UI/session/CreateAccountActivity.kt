@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.UI
+package kordoghli.firas.troc.UI.session
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.*
+import kordoghli.firas.troc.UI.HomeActivity
 import kordoghli.firas.troc.data.EndPoints
 import kordoghli.firas.troc.data.VolleySingleton
 import kotlinx.android.synthetic.main.activity_create_account.*

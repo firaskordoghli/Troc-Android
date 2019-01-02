@@ -1,10 +1,9 @@
-package kordoghli.firas.troc.UI
+package kordoghli.firas.troc.UI.profile
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kordoghli.firas.troc.R
-import kordoghli.firas.troc.UI.troquer.TroquerFragment
 
 class ProfileInfoAcrivity: AppCompatActivity(){
 

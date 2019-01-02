@@ -2,7 +2,7 @@ package kordoghli.firas.troc.data
 
 import android.content.Context
 import android.content.Intent
-import kordoghli.firas.troc.UI.LoginActivity
+import kordoghli.firas.troc.UI.session.LoginActivity
 
 class SharedPrefManager (context: Context) {
 

@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.UI
+package kordoghli.firas.troc.UI.profile
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

@@ -11,6 +11,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
 import kordoghli.firas.troc.data.EndPoints
+import kordoghli.firas.troc.data.ResponseClasses
 import kordoghli.firas.troc.data.ServiceUserInfoAdapter
 import kordoghli.firas.troc.data.VolleySingleton
 import kotlinx.android.synthetic.main.activity_profile_createur.*
@@ -26,20 +27,14 @@ class ProfileCreateurActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile_createur)
 
         val idCreateur = intent.getStringExtra("idCreateur")
-        getServiceWithId(idCreateur.toInt())
+        getUserWithId(idCreateur.toInt())
+        getServiceWithid(idCreateur.toInt())
 
-        val posts: ArrayList<String> = ArrayList()
-        for (i in 1..100){
-            posts.add("post # $i")
-        }
-
-        recycleViewUserInfo.layoutManager = LinearLayoutManager(this,OrientationHelper.HORIZONTAL,false)
-        recycleViewUserInfo.adapter = ServiceUserInfoAdapter(posts)
 
     }
 
 
-    private fun getServiceWithId(id: Int) {
+    private fun getUserWithId(id: Int) {
         //creating volley string request
         val stringRequest = object : StringRequest(Request.Method.POST, EndPoints.URL_GET_User_WITH_ID,
             Response.Listener<String> { response ->
@@ -60,6 +55,47 @@ class ProfileCreateurActivity : AppCompatActivity() {
             override fun getParams(): Map<String, String> {
                 val params = HashMap<String, String>()
                 params.put("id", id.toString())
+                return params
+            }
+        }
+        VolleySingleton.instance?.addToRequestQueue(stringRequest)
+    }
+
+    private fun getServiceWithid(id: Int) {
+        val data: ArrayList<ResponseClasses.Service> = ArrayList()
+        //creating volley string request
+        val stringRequest = object : StringRequest(Request.Method.POST, EndPoints.URL_GET_All_SERVICE_User,
+            Response.Listener<String> { response ->
+                try {
+                    //converting response to json object
+                    val jasonArray = JSONArray(response)
+                    for (i in 0 until jasonArray.length()) {
+                        val obj = jasonArray.getJSONObject(i)
+                        val service = ResponseClasses.Service(
+                            obj.getInt("id"),
+                            obj.getString("titre"),
+                            obj.getString("description"),
+                            obj.getString("categorie"),
+                            obj.getString("type"),
+                            obj.getString("idUser")
+                        )
+                        data.add(service)
+                        recycleViewUserInfo.layoutManager =
+                                LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
+                        recycleViewUserInfo.adapter = ServiceUserInfoAdapter(data)
+                        println(data)
+                    }
+
+                } catch (e: JSONException) {
+
+                }
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(applicationContext, error.message, Toast.LENGTH_SHORT).show()
+            }) {
+            override fun getParams(): Map<String, String> {
+                val params = HashMap<String, String>()
+                params.put("idUser", id.toString())
                 return params
             }
         }

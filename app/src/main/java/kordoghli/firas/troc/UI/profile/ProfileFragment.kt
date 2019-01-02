@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.UI
+package kordoghli.firas.troc.UI.profile
 
 import android.content.Intent
 import android.os.Bundle
@@ -26,12 +26,13 @@ class ProfileFragment: Fragment() {
             preference.logout()
         }
         view.cardProfil.setOnClickListener { view ->
-            startActivity(Intent(context,ProfileInfoAcrivity::class.java))
+            startActivity(Intent(context, ProfileInfoAcrivity::class.java))
         }
     }
 
     companion object {
-        fun newInstance(): ProfileFragment = ProfileFragment()
+        fun newInstance(): ProfileFragment =
+            ProfileFragment()
     }
 
 }

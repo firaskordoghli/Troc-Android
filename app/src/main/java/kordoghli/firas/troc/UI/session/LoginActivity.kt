@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.UI
+package kordoghli.firas.troc.UI.session
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -14,6 +14,7 @@ import org.json.JSONObject
 import android.content.Intent
 import android.view.View
 import kordoghli.firas.troc.*
+import kordoghli.firas.troc.UI.HomeActivity
 import kordoghli.firas.troc.data.EndPoints
 import kordoghli.firas.troc.data.SharedPrefManager
 import kordoghli.firas.troc.data.User
