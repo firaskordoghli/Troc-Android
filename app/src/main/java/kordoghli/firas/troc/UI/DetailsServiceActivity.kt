@@ -3,25 +3,17 @@ package kordoghli.firas.troc.UI
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.text.TextUtils
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
-import android.widget.Toolbar
-import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
-import kordoghli.firas.troc.UI.troquer.TroquerActivity
 import kordoghli.firas.troc.data.*
 import kotlinx.android.synthetic.main.activity_details_service.*
-import kotlinx.android.synthetic.main.activity_login.*
 import org.json.JSONArray
 import org.json.JSONException
-import org.json.JSONObject
 import java.util.HashMap
 
 class DetailsServiceActivity: AppCompatActivity() {
@@ -30,9 +22,9 @@ class DetailsServiceActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_service)
         val idService=intent.getIntExtra("id",0)
-        var serviceFav = ResponseClasses.Service(0, "", "", "", "", "")
-
+        //var serviceFav = ResponseClasses.Service(0, "", "", "", "", "")
         getServiceWithId(idService)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -72,6 +64,11 @@ class DetailsServiceActivity: AppCompatActivity() {
                     textView19.text = service.description
                     textView17.text = service.categorie
                     textView18.text = service.type
+                    imageView9.setOnClickListener {
+                        val intent = Intent(this,ProfileCreateurActivity::class.java)
+                        intent.putExtra("idCreateur",service.idUser)
+                        startActivity(intent)
+                    }
                 } catch (e: JSONException) {
 
                 }
@@ -87,9 +84,4 @@ class DetailsServiceActivity: AppCompatActivity() {
         }
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
     }
-
-    public fun toCreateTroc(v:View){
-        startActivity(Intent(this, TroquerActivity::class.java))
-    }
-    
 }

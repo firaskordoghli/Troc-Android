@@ -69,8 +69,6 @@ class HomeFragment: Fragment() {
                         val intent = Intent(activity,DetailsServiceActivity::class.java)
                         intent.putExtra("id",objItem.getInt("id"))
                         startActivity(intent)
-
-                        //println(objItem.getInt("id"))
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()

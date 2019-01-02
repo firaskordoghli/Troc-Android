@@ -8,4 +8,6 @@ object EndPoints {
     val URL_TROQUER = URL_ROOT + "addService"
     val URL_GET_SERVICE = URL_ROOT + "getService"
     val URL_GET_SERVICE_WITH_ID = URL_ROOT + "getService/"
+    val URL_GET_User_WITH_ID = URL_ROOT + "getUserWithId/"
+    val URL_GET_All_SERVICE_User = URL_ROOT + "getAllServiceForUser/"
 }

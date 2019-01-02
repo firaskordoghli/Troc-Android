@@ -21,17 +21,11 @@ class ProfileFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val preference = SharedPrefManager(context!!)
         var user = preference.getUser()
-        textViewId.text = user.id.toString()
-        textViewEmail.text = user.email
         textViewUserName.text = user.username
-
         view.cardDeconnect.setOnClickListener { view ->
             preference.logout()
         }
-
         view.cardProfil.setOnClickListener { view ->
-            //var profileInfoFragment = ProfileInfoFragment()
-            //fragmentManager!!.beginTransaction().replace(R.id.container,profileInfoFragment).commit()
             startActivity(Intent(context,ProfileInfoAcrivity::class.java))
         }
     }
