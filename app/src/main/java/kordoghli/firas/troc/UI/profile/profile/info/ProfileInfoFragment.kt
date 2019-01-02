@@ -16,6 +16,7 @@ import kordoghli.firas.troc.R
 import kordoghli.firas.troc.UI.HomeActivity
 import kordoghli.firas.troc.data.EndPoints
 import kordoghli.firas.troc.data.SharedPrefManager
+import kordoghli.firas.troc.data.User
 import kordoghli.firas.troc.data.VolleySingleton
 import kotlinx.android.synthetic.main.activity_create_account.*
 import kotlinx.android.synthetic.main.fragment_profile_info.*
@@ -53,6 +54,14 @@ class ProfileInfoFragment: Fragment(){
             Response.Listener<String> { response ->
                 try {
                     val obj = JSONObject(response)
+                    val user = User(
+                        id,
+                        infoUserName.text.toString(),
+                        InfoAdressEmail.text.toString(),
+                        infoTelephone.text.toString().toInt()
+                    )
+                    val preference = SharedPrefManager(context!!)
+                    preference.setUser(user)
                     Toast.makeText(context, obj.getString("msg"), Toast.LENGTH_LONG).show()
                 } catch (e: JSONException) {
                     e.printStackTrace()
