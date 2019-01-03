@@ -13,7 +13,6 @@ import kordoghli.firas.troc.UI.DetailsServiceActivity
 class ServiceHomeAdapter(val items: ArrayList<ResponseClasses.Service>) :
     RecyclerView.Adapter<ServiceHomeAdapter.ViewHolderHome>() {
 
-
     class ViewHolderHome(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titre: TextView = itemView.findViewById(R.id.recycletex1)
         val description: TextView = itemView.findViewById(R.id.recycletext2)

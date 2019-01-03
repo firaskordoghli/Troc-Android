@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.OrientationHelper
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -18,10 +19,7 @@ import com.android.volley.Response.ErrorListener
 import com.android.volley.toolbox.StringRequest
 import com.mancj.materialsearchbar.MaterialSearchBar
 import kordoghli.firas.troc.R
-import kordoghli.firas.troc.data.EndPoints
-import kordoghli.firas.troc.data.ResponseClasses
-import kordoghli.firas.troc.data.ServiceHomeAdapter
-import kordoghli.firas.troc.data.VolleySingleton
+import kordoghli.firas.troc.data.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.json.JSONArray
@@ -33,6 +31,7 @@ class HomeFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_home, container, false)
         allService()
         allServiceRecycle()
+        allCategorie()
         return view
     }
 
@@ -102,6 +101,32 @@ class HomeFragment : Fragment() {
                 params.put("password", motDePassLogin.text.toString())
                 return params
             }
+        }
+        VolleySingleton.instance?.addToRequestQueue(stringRequest)
+    }
+
+    private fun allCategorie() {
+        //creating volley string request
+        val data = ArrayList<String>()
+        val stringRequest = object : StringRequest(Request.Method.GET, EndPoints.URL_CATEGORIE,
+            Response.Listener<String> { response ->
+                try {
+                    //get response
+                    val jasonArray = JSONArray(response)
+                    for (i in 0 until jasonArray.length()) {
+                        val obj = jasonArray.getJSONObject(i)
+                        data.add(obj.getString("Categorie"))
+                        println(data)
+                    }
+                    recycleCategorie.layoutManager = LinearLayoutManager(context,OrientationHelper.HORIZONTAL,false)
+                    recycleCategorie.adapter = CategorieHomeAdapter(data)
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+            },
+            ErrorListener { error ->
+                Toast.makeText(activity, error.message, Toast.LENGTH_SHORT).show()
+            }) {
         }
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
     }

@@ -13,4 +13,5 @@ object EndPoints {
     val URL_GET_All_SERVICE_USER = URL_ROOT + "getAllServiceForUser/"
     val URL_DELETE_SERVICE = URL_ROOT + "delServiceWithId/"
     val URL_SIMILAIRE_SERVICE = URL_ROOT + "getSim/"
+    val URL_CATEGORIE = URL_ROOT + "getCategorie"
 }
