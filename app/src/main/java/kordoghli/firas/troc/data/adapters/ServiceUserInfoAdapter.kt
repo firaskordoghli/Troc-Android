@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.data
+package kordoghli.firas.troc.data.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import kordoghli.firas.troc.R
+import kordoghli.firas.troc.data.ResponseClasses
 
 class ServiceUserInfoAdapter(val posts: ArrayList<ResponseClasses.Service>) :
     RecyclerView.Adapter<ServiceUserInfoAdapter.ViewHolder>() {
@@ -24,7 +25,7 @@ class ServiceUserInfoAdapter(val posts: ArrayList<ResponseClasses.Service>) :
     override fun getItemCount() = posts.size
 
 
-    override fun onBindViewHolder(holder: ServiceUserInfoAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.categorie.text = posts[position].categorie
         holder.type.text = posts[position].type
     }

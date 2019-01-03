@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.data
+package kordoghli.firas.troc.data.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kordoghli.firas.troc.R
+import kordoghli.firas.troc.data.ResponseClasses
 import kotlinx.android.synthetic.main.gridview_mes_offres_prototype.view.*
 
 class MesOffresAdapter: BaseAdapter {

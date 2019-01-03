@@ -11,6 +11,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
 import kordoghli.firas.troc.data.*
+import kordoghli.firas.troc.data.adapters.MesOffresAdapter
 import kotlinx.android.synthetic.main.fragment_mes_offres.*
 import org.json.JSONArray
 import org.json.JSONException

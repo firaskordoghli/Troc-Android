@@ -1,12 +1,8 @@
 package kordoghli.firas.troc.UI
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.OrientationHelper
@@ -17,7 +13,7 @@ import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
 import kordoghli.firas.troc.data.EndPoints
 import kordoghli.firas.troc.data.ResponseClasses
-import kordoghli.firas.troc.data.ServiceUserInfoAdapter
+import kordoghli.firas.troc.data.adapters.ServiceUserInfoAdapter
 import kordoghli.firas.troc.data.VolleySingleton
 import kotlinx.android.synthetic.main.activity_profile_createur.*
 import org.json.JSONArray

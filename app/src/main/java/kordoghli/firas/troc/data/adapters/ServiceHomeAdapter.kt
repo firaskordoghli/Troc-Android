@@ -1,6 +1,5 @@
-package kordoghli.firas.troc.data
+package kordoghli.firas.troc.data.adapters
 
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import kordoghli.firas.troc.R
-import kordoghli.firas.troc.UI.DetailsServiceActivity
+import kordoghli.firas.troc.data.ResponseClasses
 
 class ServiceHomeAdapter(val items: ArrayList<ResponseClasses.Service>) :
     RecyclerView.Adapter<ServiceHomeAdapter.ViewHolderHome>() {
@@ -27,7 +26,7 @@ class ServiceHomeAdapter(val items: ArrayList<ResponseClasses.Service>) :
 
     override fun getItemCount() = items.size
 
-    override fun onBindViewHolder(holder: ServiceHomeAdapter.ViewHolderHome, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolderHome, position: Int) {
         holder.titre.text = items[position].titre
         holder.description.text = items[position].description
         holder.moreimg.setOnClickListener {

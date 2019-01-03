@@ -1,4 +1,4 @@
-package kordoghli.firas.troc.data
+package kordoghli.firas.troc.data.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
