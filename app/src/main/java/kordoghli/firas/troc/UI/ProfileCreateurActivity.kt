@@ -25,7 +25,6 @@ import org.json.JSONException
 import java.util.*
 import kotlin.collections.ArrayList
 
-
 class ProfileCreateurActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

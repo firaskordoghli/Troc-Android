@@ -15,16 +15,16 @@
             android:layout_height="175dp" android:gravity="center">
         <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:srcCompat="@mipmap/ic_launcher" android:id="@+id/imageView10"
+                android:layout_height="56dp" app:srcCompat="@drawable/placeholder" android:id="@+id/imageView10"
                 android:layout_weight="1"/>
         <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/textView29" android:layout_weight="1"/>
+                android:layout_height="2dp" android:id="@+id/textView29" android:layout_weight="1"/>
         <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="34dp"
                 android:layout_margin="10dp"
                 android:id="@+id/textView21" app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

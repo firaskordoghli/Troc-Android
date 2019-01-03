@@ -30,7 +30,7 @@
         </activity>
         <activity android:name=".UI.session.CreateAccountActivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.session.LoginActivity"/>
-        <activity android:name=".UI.HomeActivity"/>
+        <activity android:name=".UI.HomeActivity" android:windowSoftInputMode="stateVisible|adjustNothing"/>
         <activity android:name=".UI.profile.profile.info.ProfileInfoAcrivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
         <activity android:name=".UI.profile.mes.offre.MesOffresActivity"

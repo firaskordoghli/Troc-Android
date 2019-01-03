@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.OrientationHelper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -14,10 +16,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
-import kordoghli.firas.troc.data.EndPoints
-import kordoghli.firas.troc.data.ResponseClasses
-import kordoghli.firas.troc.data.SharedPrefManager
-import kordoghli.firas.troc.data.VolleySingleton
+import kordoghli.firas.troc.data.*
 import kotlinx.android.synthetic.main.activity_details_service.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -79,21 +78,24 @@ class DetailsServiceActivity : AppCompatActivity() {
                     val preference = SharedPrefManager(this)
                     var user = preference.getUser()
                     if (service.idUser.toInt() != user.id) {
-                        constraintLayout.visibility = View.VISIBLE
+                        textView14.visibility = View.VISIBLE
+                        imageView9.visibility = View.VISIBLE
                         btnDelete.visibility = View.GONE
                         btnUpdate.visibility = View.GONE
                     } else if (service.idUser.toInt() == user.id) {
-                        constraintLayout.visibility = View.GONE
+                        textView14.visibility = View.GONE
+                        imageView9.visibility = View.GONE
                         btnDelete.visibility = View.VISIBLE
                         btnUpdate.visibility = View.VISIBLE
                     }
+
                     btnDelete.setOnClickListener {
                         val builder = AlertDialog.Builder(this)
                         builder.setTitle("Attention  !!!")
                         builder.setMessage("vous voulez supprimer cette annonces ?")
                         builder.setPositiveButton("OUI") { dialogInterface: DialogInterface, i: Int ->
                             deleteService(service.id)
-                            val intent = Intent(this,HomeActivity::class.java)
+                            val intent = Intent(this, HomeActivity::class.java)
                             startActivity(intent)
                         }
                         builder.setNegativeButton("NON") { dialogInterface: DialogInterface, i: Int -> }
