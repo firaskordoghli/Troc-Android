@@ -62,44 +62,39 @@
     <TextView
             android:text="TextView"
             android:textSize="15dp"
+            android:gravity="center"
             android:textColor="@android:color/black"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView28" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView27" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginStart="32dp" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView27"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView16" app:layout_constraintEnd_toStartOf="@+id/imageView14"
+            android:layout_marginEnd="8dp"/>
     <TextView
             android:text="des services offerts par l'utilisateur :"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textView16" android:layout_marginTop="16dp"
+            android:id="@+id/textView16" android:layout_marginTop="32dp"
             app:layout_constraintTop_toBottomOf="@+id/textView28" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
-    />
+            android:layout_marginEnd="16dp"/>
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recycleViewUserInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textView16"
-            app:layout_constraintEnd_toEndOf="parent">
-    </android.support.v7.widget.RecyclerView>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/recycleViewUserInfo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:gravity="center">
-        <ImageButton
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/appeler" android:id="@+id/imageButton4"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"/>
-    </LinearLayout>
+    >
+    </android.support.v7.widget.RecyclerView>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/call"
+            android:id="@+id/imageView14" android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView27"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/textView16"
+            app:layout_constraintStart_toEndOf="@+id/textView28" android:layout_marginStart="8dp"/>
 
 </android.support.constraint.ConstraintLayout>

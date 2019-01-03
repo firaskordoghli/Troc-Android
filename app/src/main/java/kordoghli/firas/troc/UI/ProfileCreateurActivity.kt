@@ -1,10 +1,15 @@
 package kordoghli.firas.troc.UI
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.OrientationHelper
-import android.widget.LinearLayout
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
@@ -20,19 +25,16 @@ import org.json.JSONException
 import java.util.*
 import kotlin.collections.ArrayList
 
+
 class ProfileCreateurActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_createur)
-
         val idCreateur = intent.getStringExtra("idCreateur")
         getUserWithId(idCreateur.toInt())
         getServiceWithid(idCreateur.toInt())
-
-
     }
-
 
     private fun getUserWithId(id: Int) {
         //creating volley string request
@@ -45,6 +47,11 @@ class ProfileCreateurActivity : AppCompatActivity() {
                     textView22.text = obj.getString("username")
                     textView26.text = obj.getString("email")
                     textView28.text = obj.getString("phone")
+                    imageView14.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_DIAL)
+                        intent.data = Uri.parse("tel:"+"54000673")
+                        startActivity(intent)
+                    }
                 } catch (e: JSONException) {
 
                 }
@@ -83,9 +90,7 @@ class ProfileCreateurActivity : AppCompatActivity() {
                         recycleViewUserInfo.layoutManager =
                                 LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
                         recycleViewUserInfo.adapter = ServiceUserInfoAdapter(data)
-                        println(data)
                     }
-
                 } catch (e: JSONException) {
 
                 }
@@ -101,4 +106,6 @@ class ProfileCreateurActivity : AppCompatActivity() {
         }
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
     }
+
+
 }

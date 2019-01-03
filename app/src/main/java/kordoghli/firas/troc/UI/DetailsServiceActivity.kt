@@ -87,7 +87,6 @@ class DetailsServiceActivity : AppCompatActivity() {
                         btnDelete.visibility = View.VISIBLE
                         btnUpdate.visibility = View.VISIBLE
                     }
-
                     btnDelete.setOnClickListener {
                         val builder = AlertDialog.Builder(this)
                         builder.setTitle("Attention  !!!")
@@ -99,7 +98,6 @@ class DetailsServiceActivity : AppCompatActivity() {
                         }
                         builder.setNegativeButton("NON") { dialogInterface: DialogInterface, i: Int -> }
                         builder.show()
-
                     }
                 } catch (e: JSONException) {
 
