@@ -60,6 +60,7 @@ class HomeFragment : Fragment() {
                         hp["id"] = obj.getInt("id").toString()
                         hp["titre"] = obj.getString("titre")
                         hp["description"] = obj.getString("description")
+                        hp["categorie"] = obj.getString("categorie")
                         hp["type"] = obj.getString("type")
                         hp["idUser"] = obj.getString("idUser")
                         hp["imageView4"] = Integer.toString(R.drawable.profileimg)
@@ -119,7 +120,6 @@ class HomeFragment : Fragment() {
                     for (i in 0 until jasonArray.length()) {
                         val obj = jasonArray.getJSONObject(i)
                         data.add(obj.getString("Categorie"))
-                        println(data)
                     }
                     recycleCategorie.layoutManager = LinearLayoutManager(context,OrientationHelper.HORIZONTAL,false)
                     recycleCategorie.adapter = CategorieHomeAdapter(data)
@@ -155,7 +155,6 @@ class HomeFragment : Fragment() {
                         data.add(service)
                         recycleInformatique.layoutManager=LinearLayoutManager(context,OrientationHelper.HORIZONTAL,false)
                         recycleInformatique.adapter=ServiceUserInfoAdapter(data)
-
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()

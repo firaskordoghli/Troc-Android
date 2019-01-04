@@ -16,7 +16,11 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
-import kordoghli.firas.troc.data.*
+import kordoghli.firas.troc.data.EndPoints
+import kordoghli.firas.troc.data.ResponseClasses
+import kordoghli.firas.troc.data.SharedPrefManager
+import kordoghli.firas.troc.data.VolleySingleton
+import kordoghli.firas.troc.data.adapters.ServiceUserInfoAdapter
 import kotlinx.android.synthetic.main.activity_details_service.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -28,6 +32,8 @@ class DetailsServiceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_service)
+
+
         val idService = intent.getIntExtra("id", 0)
         getServiceWithId(idService)
 
@@ -70,6 +76,10 @@ class DetailsServiceActivity : AppCompatActivity() {
                     textView19.text = service.description
                     textView17.text = service.categorie
                     textView18.text = service.type
+
+                    supportActionBar?.title = service.titre
+                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
                     imageView9.setOnClickListener {
                         val intent = Intent(this, ProfileCreateurActivity::class.java)
                         intent.putExtra("idCreateur", service.idUser)

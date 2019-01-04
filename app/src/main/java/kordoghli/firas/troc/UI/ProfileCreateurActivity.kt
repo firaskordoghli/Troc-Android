@@ -42,6 +42,8 @@ class ProfileCreateurActivity : AppCompatActivity() {
                     textView22.text = obj.getString("username")
                     textView26.text = obj.getString("email")
                     textView28.text = obj.getString("phone")
+                    supportActionBar?.title = obj.getString("username")
+                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
                     imageView14.setOnClickListener {
                         val intent = Intent(Intent.ACTION_DIAL)
                         intent.data = Uri.parse("tel:"+"54000673")

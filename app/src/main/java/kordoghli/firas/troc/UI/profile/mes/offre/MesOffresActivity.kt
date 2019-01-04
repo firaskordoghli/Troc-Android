@@ -9,6 +9,10 @@ class MesOffresActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mes_offres)
+
+        supportActionBar?.title = "Vos offres"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         openFragment(MesOffresFragment.newInstance())
     }
 
