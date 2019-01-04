@@ -56,6 +56,7 @@ class MesOffresFragment : Fragment() {
                             obj.getString("idUser")
                         )
                         data.add(service)
+                        println(service)
                         adapter = MesOffresAdapter(context!!, data)
                         gridViewMesOffres.adapter = adapter
                     }

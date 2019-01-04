@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kordoghli.firas.troc.R
+import kordoghli.firas.troc.UI.profile.mes.favoris.MesFavorisActivity
 import kordoghli.firas.troc.UI.profile.mes.offre.MesOffresActivity
 import kordoghli.firas.troc.UI.profile.profile.info.ProfileInfoAcrivity
 import kordoghli.firas.troc.data.SharedPrefManager
@@ -35,6 +36,9 @@ class ProfileFragment: Fragment() {
         }
         mesAnnonces.setOnClickListener {
             startActivity(Intent(context, MesOffresActivity::class.java))
+        }
+        favoris.setOnClickListener { view ->
+            startActivity(Intent(context, MesFavorisActivity::class.java))
         }
     }
 

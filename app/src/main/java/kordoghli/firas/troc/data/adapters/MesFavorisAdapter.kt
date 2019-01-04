@@ -9,9 +9,9 @@ import android.widget.BaseAdapter
 import kordoghli.firas.troc.R
 import kordoghli.firas.troc.UI.DetailsServiceActivity
 import kordoghli.firas.troc.data.ResponseClasses
-import kotlinx.android.synthetic.main.gridview_mes_offres_prototype.view.*
+import kotlinx.android.synthetic.main.gridview_mes_favoris_prototype.view.*
 
-class MesOffresAdapter: BaseAdapter {
+class MesFavorisAdapter: BaseAdapter {
     var serviceList = ArrayList<ResponseClasses.Service>()
     var context: Context? = null
 
@@ -34,17 +34,10 @@ class MesOffresAdapter: BaseAdapter {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val service = this.serviceList[position]
-
-        var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var gridView = inflator.inflate(R.layout.gridview_mes_offres_prototype, null)
-        gridView.textView30.text = service.categorie
-        gridView.textView31.text = service.titre
-        gridView.imageView11.setOnClickListener {
-            val intent = Intent(context,DetailsServiceActivity::class.java)
-            intent.putExtra("id",service.id)
-            context!!.startActivity(intent)
-        }
-
+        val inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val gridView = inflator.inflate(R.layout.gridview_mes_favoris_prototype, null)
+        gridView.textView46.text = service.categorie
+        gridView.textView43.text = service.titre
         return gridView
     }
 }

@@ -16,10 +16,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
-import kordoghli.firas.troc.data.EndPoints
-import kordoghli.firas.troc.data.ResponseClasses
-import kordoghli.firas.troc.data.SharedPrefManager
-import kordoghli.firas.troc.data.VolleySingleton
+import kordoghli.firas.troc.data.*
 import kordoghli.firas.troc.data.adapters.ServiceUserInfoAdapter
 import kotlinx.android.synthetic.main.activity_details_service.*
 import org.json.JSONArray
@@ -32,28 +29,14 @@ class DetailsServiceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_service)
-
-
         val idService = intent.getIntExtra("id", 0)
         getServiceWithId(idService)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater;
         inflater.inflate(R.menu.details_menu, menu)
         return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item!!.itemId) {
-            R.id.addFavoris -> {
-                Toast.makeText(this, "favoris ajouter", Toast.LENGTH_LONG).show()
-                return true
-            }
-        }
-
-        return super.onOptionsItemSelected(item)
     }
 
     private fun getServiceWithId(id: Int) {
@@ -98,7 +81,11 @@ class DetailsServiceActivity : AppCompatActivity() {
                         btnDelete.visibility = View.VISIBLE
                         btnUpdate.visibility = View.VISIBLE
                     }
-
+                    btnFavoris.setOnClickListener {
+                        var db = DataBaseHandler(this)
+                        db.insertData(service,user.id)
+                        Toast.makeText(this, "added", Toast.LENGTH_SHORT).show()
+                    }
                     btnDelete.setOnClickListener {
                         val builder = AlertDialog.Builder(this)
                         builder.setTitle("Attention  !!!")
