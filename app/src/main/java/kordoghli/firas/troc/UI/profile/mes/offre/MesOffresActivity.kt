@@ -9,16 +9,14 @@ class MesOffresActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mes_offres)
-
         supportActionBar?.title = "Vos offres"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         openFragment(MesOffresFragment.newInstance())
     }
 
     private fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.containerMesOffres,fragment)
+        transaction.replace(R.id.containerMesOffres, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
