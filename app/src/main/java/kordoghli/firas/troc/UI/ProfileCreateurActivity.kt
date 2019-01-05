@@ -86,7 +86,7 @@ class ProfileCreateurActivity : AppCompatActivity() {
                         data.add(service)
                         recycleViewUserInfo.layoutManager =
                                 LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
-                        recycleViewUserInfo.adapter = ServiceUserInfoAdapter(data)
+                        recycleViewUserInfo.adapter = ServiceUserInfoAdapter(data,{ item : ResponseClasses.Service -> ItemClicked(item) })
                     }
                 } catch (e: JSONException) {
 
@@ -102,6 +102,10 @@ class ProfileCreateurActivity : AppCompatActivity() {
             }
         }
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
+    }
+
+    private fun ItemClicked(item : ResponseClasses.Service) {
+        Toast.makeText(this, "Clicked: ${item.titre}", Toast.LENGTH_LONG).show()
     }
 
 

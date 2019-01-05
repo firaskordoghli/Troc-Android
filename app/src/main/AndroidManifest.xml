@@ -52,6 +52,9 @@
         <activity android:name=".UI.DetailsServiceActivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
 
+        <activity android:name=".UI.CategorieActivity"
+                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
+
         <activity android:name=".UI.troquer.TroquerActivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
 

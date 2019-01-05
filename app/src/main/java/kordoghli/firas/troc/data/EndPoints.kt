@@ -18,4 +18,5 @@ object EndPoints {
     val URL_CATEGORIE_ANIMAUX = URL_ROOT + "getCategorieAnimaux"
     val URL_ADD_COMMENTAIRE = URL_ROOT + "addCommentaire"
     val URL_GET_COMMENTAIRE = URL_ROOT + "getCommentaireForService/"
+    val URL_GET_SERVICE_BY_CATEGORIE = URL_ROOT + "getCategorieByCategorie/"
 }

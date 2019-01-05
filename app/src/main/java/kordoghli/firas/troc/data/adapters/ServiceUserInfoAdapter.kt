@@ -8,12 +8,17 @@ import android.widget.TextView
 import kordoghli.firas.troc.R
 import kordoghli.firas.troc.data.ResponseClasses
 
-class ServiceUserInfoAdapter(val posts: ArrayList<ResponseClasses.Service>) :
+class ServiceUserInfoAdapter(val posts: ArrayList<ResponseClasses.Service>, val clickListener: (ResponseClasses.Service) -> Unit) :
     RecyclerView.Adapter<ServiceUserInfoAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val categorie: TextView = itemView.findViewById(R.id.textView21)
+        val titre: TextView = itemView.findViewById(R.id.textView21)
         val type: TextView = itemView.findViewById(R.id.textView29)
+        fun bind(service: ResponseClasses.Service,clickListener: (ResponseClasses.Service) -> Unit){
+            titre.text = service.titre
+            type.text = service.type
+            itemView.setOnClickListener { clickListener(service) }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,8 +31,7 @@ class ServiceUserInfoAdapter(val posts: ArrayList<ResponseClasses.Service>) :
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.categorie.text = posts[position].categorie
-        holder.type.text = posts[position].type
+        (holder as ViewHolder).bind(posts[position],clickListener)
     }
 
 

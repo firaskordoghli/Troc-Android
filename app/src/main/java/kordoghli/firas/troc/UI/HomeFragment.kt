@@ -118,7 +118,7 @@ class HomeFragment : Fragment() {
 
     private fun allCategorie() {
         //creating volley string request
-        val data = ArrayList<String>()
+        val data = ArrayList<ResponseClasses.Categorie>()
         val stringRequest = object : StringRequest(Request.Method.GET, EndPoints.URL_CATEGORIE,
             Response.Listener<String> { response ->
                 try {
@@ -126,10 +126,14 @@ class HomeFragment : Fragment() {
                     val jasonArray = JSONArray(response)
                     for (i in 0 until jasonArray.length()) {
                         val obj = jasonArray.getJSONObject(i)
-                        data.add(obj.getString("Categorie"))
+                        val categorie = ResponseClasses.Categorie(
+                            obj.getInt("Id"),
+                            obj.getString("Categorie")
+                        )
+                        data.add(categorie)
                     }
                     recycleCategorie.layoutManager = LinearLayoutManager(context, OrientationHelper.HORIZONTAL, false)
-                    recycleCategorie.adapter = CategorieHomeAdapter(data)
+                    recycleCategorie.adapter = CategorieHomeAdapter(data,{ item: ResponseClasses.Categorie -> CategorieItemClicked(item) })
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }
@@ -162,7 +166,8 @@ class HomeFragment : Fragment() {
                         data.add(service)
                         recycleInformatique.layoutManager =
                                 LinearLayoutManager(context, OrientationHelper.HORIZONTAL, false)
-                        recycleInformatique.adapter = ServiceUserInfoAdapter(data)
+                        recycleInformatique.adapter =
+                                ServiceUserInfoAdapter(data, { item: ResponseClasses.Service -> ItemClicked(item) })
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()
@@ -196,7 +201,8 @@ class HomeFragment : Fragment() {
                         data.add(service)
                         recycleTransport.layoutManager =
                                 LinearLayoutManager(context, OrientationHelper.HORIZONTAL, false)
-                        recycleTransport.adapter = ServiceUserInfoAdapter(data)
+                        recycleTransport.adapter =
+                                ServiceUserInfoAdapter(data, { item: ResponseClasses.Service -> ItemClicked(item) })
 
                     }
                 } catch (e: JSONException) {
@@ -208,6 +214,20 @@ class HomeFragment : Fragment() {
             }) {
         }
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
+    }
+
+    private fun ItemClicked(item: ResponseClasses.Service) {
+        //Toast.makeText(context, "Clicked: ${item.titre}", Toast.LENGTH_LONG).show()
+        val intent = Intent(activity, DetailsServiceActivity::class.java)
+        intent.putExtra("id", item.id)
+        startActivity(intent)
+    }
+
+    private fun CategorieItemClicked(item: ResponseClasses.Categorie) {
+        //Toast.makeText(context, "Clicked: ${item.categorie}", Toast.LENGTH_LONG).show()
+        val intent = Intent(activity, CategorieActivity::class.java)
+        intent.putExtra("categorie", item.categorie)
+        startActivity(intent)
     }
 
     fun setListViewHeightBasedOnChildren(listView: ListView) {
