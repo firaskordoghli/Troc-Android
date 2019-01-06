@@ -14,7 +14,7 @@ class TroquerActivity : AppCompatActivity()  {
 
         supportActionBar?.title = "Que Troquez vous ?"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        openFragment(TroquerFragment.newInstance())
+        openFragment(TroquerEtape1Fragment.newInstance())
     }
 
     private fun openFragment(fragment: Fragment) {
