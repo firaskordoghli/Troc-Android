@@ -4,24 +4,20 @@
                                              android:layout_height="match_parent">
 
     <TextView
-            android:text="Photos"
-            android:textSize="25dp"
-            android:textColor="@android:color/black"
+            android:text="TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textView53"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"/>
+            android:id="@+id/textView55" android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent"/>
     <Button
             android:textAllCaps="false"
-            android:text="Suivant"
+            android:text="Enregistrer"
             android:background="#B40037"
             android:textColor="@android:color/white"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/button5" android:layout_marginEnd="64dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="64dp"
+            android:id="@+id/button6" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="64dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="64dp"
             android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"/>
 </android.support.constraint.ConstraintLayout>

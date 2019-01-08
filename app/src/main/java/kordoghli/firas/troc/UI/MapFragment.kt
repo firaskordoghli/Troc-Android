@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
 import com.mapbox.android.core.location.LocationEngine
 import com.mapbox.android.core.location.LocationEngineListener
 import com.mapbox.android.core.location.LocationEnginePriority
@@ -22,8 +26,16 @@ import com.mapbox.mapboxsdk.location.modes.RenderMode
 import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerPlugin
 import kordoghli.firas.troc.R
+import kordoghli.firas.troc.data.EndPoints
+import kordoghli.firas.troc.data.ResponseClasses
+import kordoghli.firas.troc.data.VolleySingleton
+import kordoghli.firas.troc.data.adapters.CommentaireAdapter
+import kotlinx.android.synthetic.main.activity_details_service.*
 import kotlinx.android.synthetic.main.fragment_map.*
 import kotlinx.android.synthetic.main.fragment_troquer_etape1.*
+import org.json.JSONArray
+import org.json.JSONException
+import java.util.HashMap
 
 class MapFragment:Fragment(), PermissionsListener, LocationEngineListener {
 
@@ -48,10 +60,42 @@ class MapFragment:Fragment(), PermissionsListener, LocationEngineListener {
         mapViewMap.getMapAsync { mapboxMap ->
             map = mapboxMap
             enableLocation()
-            map.addMarker(
-                MarkerOptions()
-                    .position(LatLng(36.862499, 10.195556))
-                    .title("test jok"))
+            //******************************
+            val stringRequest = object : StringRequest(
+                Request.Method.GET, EndPoints.URL_GET_SERVICE, Response.Listener<String> { response ->
+                    try {
+                        val jasonArray = JSONArray(response)
+                        for (i in 0 until jasonArray.length()) {
+                            val obj = jasonArray.getJSONObject(i)
+                            val service = ResponseClasses.Service(
+                                obj.getInt("id"),
+                                obj.getString("titre"),
+                                obj.getString("description"),
+                                obj.getString("categorie"),
+                                obj.getString("type"),
+                                obj.getString("idUser"),
+                                obj.getDouble("longitude").toFloat(),
+                                obj.getString("latitude").toFloat()
+                            )
+                            map.addMarker(
+                                MarkerOptions()
+                                    //.position(LatLng(36.862499, 10.195556))
+                                    .position(LatLng(service.longitude.toDouble(), service.latitude.toDouble()))
+                                    .title(service.titre))
+
+                        }
+                    } catch (e: JSONException) {
+                        e.printStackTrace()
+                    }
+                },
+                Response.ErrorListener { volleyError ->
+                    Toast.makeText(context, volleyError.message, Toast.LENGTH_LONG).show()
+                }) {
+            }
+            VolleySingleton.instance?.addToRequestQueue(stringRequest)
+            //******************************
+
+
         }
 
     }
