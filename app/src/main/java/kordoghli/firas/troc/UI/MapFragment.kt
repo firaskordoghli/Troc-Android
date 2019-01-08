@@ -1,10 +1,9 @@
-package kordoghli.firas.troc.UI.troquer
+package kordoghli.firas.troc.UI
 
 import android.annotation.SuppressLint
 import android.location.Location
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,14 +22,10 @@ import com.mapbox.mapboxsdk.location.modes.RenderMode
 import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerPlugin
 import kordoghli.firas.troc.R
-import kordoghli.firas.troc.data.Communicator
-import kordoghli.firas.troc.data.ResponseClasses
+import kotlinx.android.synthetic.main.fragment_map.*
 import kotlinx.android.synthetic.main.fragment_troquer_etape1.*
-import kotlinx.android.synthetic.main.fragment_troquer_etape1.view.*
 
-
-class TroquerEtape1Fragment : Fragment(), PermissionsListener, LocationEngineListener {
-    lateinit var communicator: Communicator
+class MapFragment:Fragment(), PermissionsListener, LocationEngineListener {
 
     private lateinit var map: MapboxMap
     private lateinit var permissionManager: PermissionsManager
@@ -42,46 +37,23 @@ class TroquerEtape1Fragment : Fragment(), PermissionsListener, LocationEngineLis
         // Mapbox access token is configured here. This needs to be called either in your application
         // object or in the same activity which contains the mapview.
         Mapbox.getInstance(context!!, getString(R.string.mapbox_access_token))
-        mapView?.onCreate(savedInstanceState)
+        mapViewMap?.onCreate(savedInstanceState)
 
-        val view: View = inflater!!.inflate(R.layout.fragment_troquer_etape1, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "etape 2"
-        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
+        val view: View = inflater.inflate(R.layout.fragment_map, container, false)
         return view
     }
-    @SuppressLint("MissingPermission")
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mapView.getMapAsync { mapboxMap ->
+        mapViewMap.getMapAsync { mapboxMap ->
             map = mapboxMap
             enableLocation()
-            map.addMarker(MarkerOptions()
-                .position(LatLng(36.862499, 10.195556))
-                .title("test jok"))
-        }
-        view.toEtape2.setOnClickListener { view ->
-            val service = ResponseClasses.Service(
-                50,
-                "fragment2",
-                "fragment2",
-                "fragment2",
-                "fragment2",
-                "20",
-                9.9F,
-                9.9F
-            )
-            communicator.etape2data(service)
-            //var troquerEtape2Fragment = TroquerEtape2Fragment()
-            //fragmentManager!!.beginTransaction().replace(R.id.container, troquerEtape2Fragment).commit()
-            //println(originLocation.latitude)
+            map.addMarker(
+                MarkerOptions()
+                    .position(LatLng(36.862499, 10.195556))
+                    .title("test jok"))
         }
 
-        communicator = activity as Communicator
-    }
-
-    fun saveDate (service: ResponseClasses.Service){
-        println("****************** service from fragment 2"+service)
     }
 
     private fun enableLocation() {
@@ -112,7 +84,7 @@ class TroquerEtape1Fragment : Fragment(), PermissionsListener, LocationEngineLis
 
     @SuppressLint("MissingPermission", "WrongConstant")
     private fun initilizeLocationLayer() {
-        locationLayerPlugin = LocationLayerPlugin(mapView, map, locationEngine)
+        locationLayerPlugin = LocationLayerPlugin(mapViewMap, map, locationEngine)
         locationLayerPlugin?.setLocationLayerEnabled(true)
         locationLayerPlugin?.cameraMode = CameraMode.TRACKING
         locationLayerPlugin?.renderMode = RenderMode.NORMAL
@@ -158,47 +130,46 @@ class TroquerEtape1Fragment : Fragment(), PermissionsListener, LocationEngineLis
             locationEngine?.removeLocationUpdates()
             locationLayerPlugin?.onStart()
         }
-        mapView?.onStart()
+        mapViewMap?.onStart()
     }
 
     override fun onResume() {
         super.onResume()
-        mapView?.onResume()
+        mapViewMap?.onResume()
     }
 
     override fun onPause() {
         super.onPause()
-        mapView?.onPause()
+        mapViewMap?.onPause()
     }
 
     override fun onStop() {
         super.onStop()
         locationEngine?.removeLocationUpdates()
         locationLayerPlugin?.onStop()
-        mapView?.onStop()
+        mapViewMap?.onStop()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         locationEngine?.deactivate()
-        mapView.onDestroy()
+        mapViewMap.onDestroy()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         if (outState != null) {
-            mapView.onSaveInstanceState(outState)
+            mapViewMap.onSaveInstanceState(outState)
         }
     }
 
     override fun onLowMemory() {
         super.onLowMemory()
-        mapView?.onLowMemory()
+        mapViewMap?.onLowMemory()
     }
 
     companion object {
-        fun newInstance(): TroquerEtape1Fragment =
-            TroquerEtape1Fragment()
-
+        fun newInstance(): MapFragment =
+            MapFragment()
     }
 }

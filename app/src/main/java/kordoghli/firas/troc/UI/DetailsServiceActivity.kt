@@ -55,7 +55,9 @@ class DetailsServiceActivity : AppCompatActivity() {
                         obj.getString("description"),
                         obj.getString("categorie"),
                         obj.getString("type"),
-                        obj.getString("idUser")
+                        obj.getString("idUser"),
+                        9.9F,
+                        9.9F
                     )
                     textView20.text = service.titre
                     textView19.text = service.description

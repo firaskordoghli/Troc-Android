@@ -81,7 +81,9 @@ class ProfileCreateurActivity : AppCompatActivity() {
                             obj.getString("description"),
                             obj.getString("categorie"),
                             obj.getString("type"),
-                            obj.getString("idUser")
+                            obj.getString("idUser"),
+                            9.9F,
+                            9.9F
                         )
                         data.add(service)
                         recycleViewUserInfo.layoutManager =

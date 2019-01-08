@@ -45,7 +45,9 @@ class MesFavorisFragment : Fragment() {
                 data[i].description,
                 data[i].categorie,
                 data[i].type,
-                data[i].idUser
+                data[i].idUser,
+                9.9F,
+                9.9F
             )
             services.add(service)
             adapter = MesOffresAdapter(context!!, services)

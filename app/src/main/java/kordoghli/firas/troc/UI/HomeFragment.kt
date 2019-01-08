@@ -161,7 +161,9 @@ class HomeFragment : Fragment() {
                             obj.getString("description"),
                             obj.getString("categorie"),
                             obj.getString("type"),
-                            obj.getString("idUser")
+                            obj.getString("idUser"),
+                            9.9F,
+                            9.9F
                         )
                         data.add(service)
                         recycleInformatique.layoutManager =
@@ -196,7 +198,9 @@ class HomeFragment : Fragment() {
                             obj.getString("description"),
                             obj.getString("categorie"),
                             obj.getString("type"),
-                            obj.getString("idUser")
+                            obj.getString("idUser"),
+                            9.9F,
+                            9.9F
                         )
                         data.add(service)
                         recycleTransport.layoutManager =

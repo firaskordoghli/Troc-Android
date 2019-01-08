@@ -58,6 +58,15 @@
         <activity android:name=".UI.troquer.TroquerActivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
 
+        <activity android:name=".UI.troquer.Etape1Activity"
+                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
+
+        <activity android:name=".UI.troquer.Etape2Activity"
+                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.troquer.Etape1Activity"/>
+
+        <activity android:name=".UI.troquer.Etape3Activity"
+                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.troquer.Etape2Activity"/>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

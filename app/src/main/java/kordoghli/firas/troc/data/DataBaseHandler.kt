@@ -66,7 +66,9 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
                     result.getString(result.getColumnIndex(COL_DESCRIPTION)),
                     result.getString(result.getColumnIndex(COL_CATEGORIE)),
                     result.getString(result.getColumnIndex(COL_TYPE)),
-                    result.getString(result.getColumnIndex(COL_IDUSER))
+                    result.getString(result.getColumnIndex(COL_IDUSER)),
+                    9.9F,
+                    9.9F
                 )
                 list.add(service)
             } while (result.moveToNext())

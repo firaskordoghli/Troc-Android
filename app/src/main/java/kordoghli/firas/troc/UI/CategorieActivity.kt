@@ -47,7 +47,9 @@ class CategorieActivity : AppCompatActivity() {
                             obj.getString("description"),
                             obj.getString("categorie"),
                             obj.getString("type"),
-                            obj.getString("idUser")
+                            obj.getString("idUser"),
+                            9.9F,
+                            9.9F
                         )
                         services.add(service)
                         listViewCategorie.adapter=ListCategorieAdapter(applicationContext,services)

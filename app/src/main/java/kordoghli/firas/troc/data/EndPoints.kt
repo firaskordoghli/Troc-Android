@@ -2,7 +2,7 @@ package kordoghli.firas.troc.data
 
 object EndPoints {
     //private val URL_ROOT = "http://10.0.2.2:3000/"
-    private val URL_ROOT = "http://192.168.43.81:3000/"
+    private val URL_ROOT = "http://192.168.1.9:3000/"
     val URL_CREATE_ACCOUNT = URL_ROOT + "signup"
     val URL_UPDATE_ACCOUNT = URL_ROOT + "updateUser"
     val URL_LOGIN = URL_ROOT + "login"

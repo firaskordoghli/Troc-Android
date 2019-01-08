@@ -14,4 +14,9 @@
             android:id="@+id/navigation_troquer"
             android:icon="@drawable/add"
             android:title="troquer"/>
+
+    <item
+            android:id="@+id/navigation_map"
+            android:icon="@drawable/location"
+            android:title="map"/>
 </menu>
