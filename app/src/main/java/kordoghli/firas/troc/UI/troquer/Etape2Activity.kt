@@ -32,8 +32,6 @@ class Etape2Activity : AppCompatActivity(), PermissionsListener, LocationEngineL
     private lateinit var originLocation: Location
     private var locationEngine: LocationEngine? = null
     private var locationLayerPlugin: LocationLayerPlugin? = null
-    var latitude = 0.0
-    var longitude = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

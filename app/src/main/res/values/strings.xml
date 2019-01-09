@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Troc</string>
+    <string name="facebook_app_id">818404285173362</string>
+    <string name="fb_login_protocol_scheme">fb818404285173362</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiZmlyYXNqb2siLCJhIjoiY2pxanZsaHI4MHM3dDN4bnk0eG9vaTh3ZCJ9.HvFQwTnAnYl8yg1yBZf01A</string>
 </resources>
 

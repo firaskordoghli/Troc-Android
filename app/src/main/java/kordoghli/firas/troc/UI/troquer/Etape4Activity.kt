@@ -1,6 +1,9 @@
 package kordoghli.firas.troc.UI.troquer
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.android.volley.AuthFailureError
@@ -8,6 +11,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
+import kordoghli.firas.troc.UI.HomeActivity
 import kordoghli.firas.troc.data.EndPoints
 import kordoghli.firas.troc.data.ResponseClasses
 import kordoghli.firas.troc.data.VolleySingleton
@@ -23,8 +27,21 @@ class Etape4Activity:AppCompatActivity() {
         val service = intent.getSerializableExtra(Etape2Activity.EXTRA_SERVICE) as ResponseClasses.Service
         println("********************************$service")
 
+        textView55.text=service.titre
+        textView56.text=service.description
+        textView57.text=service.categorie
+        textView58.text=service.type
+
         button6.setOnClickListener {
-            enregistrerService(service)
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Felicitation")
+            builder.setMessage("Votre annonce a été créé avec succès !")
+            builder.setPositiveButton("aller vers l'accueil") { dialogInterface: DialogInterface, i: Int ->
+                enregistrerService(service)
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
+            builder.show()
         }
     }
 
@@ -48,8 +65,8 @@ class Etape4Activity:AppCompatActivity() {
                 params.put("categorie", service.categorie)
                 params.put("type", service.type)
                 params.put("idUser",service.idUser)
-                params.put("longitude", service.longitude.toString())
-                params.put("latitude", service.latitude.toString())
+                params.put("longitude", service.latitude.toString())
+                params.put("latitude", service.longitude.toString())
                 return params
             }
         }

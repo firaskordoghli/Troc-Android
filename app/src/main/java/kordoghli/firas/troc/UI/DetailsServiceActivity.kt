@@ -16,6 +16,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.R
+import kordoghli.firas.troc.UI.troquer.TroquerUpdateActivity
 import kordoghli.firas.troc.data.*
 import kordoghli.firas.troc.data.adapters.CommentaireAdapter
 import kotlinx.android.synthetic.main.activity_details_service.*
@@ -33,10 +34,16 @@ class DetailsServiceActivity : AppCompatActivity() {
         val idService = intent.getIntExtra("id", 0)
         getServiceWithId(idService)
         getCommentaire(idService)
+
+        btnUpdate.setOnClickListener {
+            val intent = Intent(this, TroquerUpdateActivity::class.java)
+            intent.putExtra("idService",idService)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater;
+        val inflater = menuInflater
         inflater.inflate(R.menu.details_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }

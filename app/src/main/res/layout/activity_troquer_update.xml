@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent" xmlns:mapbox="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/scrollView3">
+        <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     android:orientation="vertical">
+            <TextView
+                    android:text="Categorie:"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView62" android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/editText14" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"/>
+            <TextView
+                    android:text="Description:"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView61" android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/editText13" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"/>
+            <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView63" android:id="@+id/radioGroup">
+                <RadioButton
+                        android:text="service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/radioButton3" android:layout_weight="1"/>
+                <RadioButton
+                        android:checked="true"
+                        android:text="bien"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/radioButton4" android:layout_weight="1"/>
+            </RadioGroup>
+            <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner3" android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textView62"/>
+            <com.mapbox.mapboxsdk.maps.MapView
+                    android:id="@+id/mapViewUpdate"
+
+                    android:layout_height="123dp" android:layout_width="0dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" android:layout_marginEnd="8dp">
+            </com.mapbox.mapboxsdk.maps.MapView>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="titre"
+                    android:ems="10"
+                    android:id="@+id/editText13" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView60" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="description"
+                    android:ems="10"
+                    android:id="@+id/editText14"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView61"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
+            <TextView
+                    android:text="Type d'annonce:"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView63" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp" android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/spinner3" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"/>
+            <TextView
+                    android:text="Titre:"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView60" android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView59" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp" android:layout_width="0dp"/>
+            <TextView
+                    android:text="Modifier votre annonce"
+                    android:textSize="25dp"
+                    android:textColor="@android:color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView59"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp" android:layout_marginTop="32dp"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            <Button
+                    android:textAllCaps="false"
+                    android:text="Modifier"
+                    android:background="#B40037"
+                    android:textColor="@android:color/white"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button8"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/mapViewUpdate" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="64dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="64dp"/>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
