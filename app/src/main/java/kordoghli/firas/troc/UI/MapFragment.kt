@@ -200,12 +200,7 @@ class MapFragment:Fragment(), PermissionsListener, LocationEngineListener {
         mapViewMap.onDestroy()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        if (outState != null) {
-            mapViewMap.onSaveInstanceState(outState)
-        }
-    }
+
 
     override fun onLowMemory() {
         super.onLowMemory()

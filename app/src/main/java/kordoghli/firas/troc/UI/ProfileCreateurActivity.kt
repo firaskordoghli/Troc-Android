@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.OrientationHelper
+import android.view.WindowManager
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
@@ -26,6 +27,7 @@ class ProfileCreateurActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_createur)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         val idCreateur = intent.getStringExtra("idCreateur")
         getUserWithId(idCreateur.toInt())
         getServiceWithid(idCreateur.toInt())

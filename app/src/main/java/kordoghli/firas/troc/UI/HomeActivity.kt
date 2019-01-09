@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.WindowManager
 import kordoghli.firas.troc.R
 import kordoghli.firas.troc.UI.profile.ProfileFragment
 import kordoghli.firas.troc.UI.troquer.Etape1Activity
@@ -47,6 +48,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         val homeFragment = HomeFragment.newInstance()
         openFragment(homeFragment)
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.NavUtils
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.view.WindowManager
 import kordoghli.firas.troc.R
 
 class ProfileInfoAcrivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ class ProfileInfoAcrivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_info)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         supportActionBar?.apply {
             title = "Parametre"
             setDisplayHomeAsUpEnabled(true)

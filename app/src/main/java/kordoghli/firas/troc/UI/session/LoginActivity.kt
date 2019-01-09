@@ -13,6 +13,7 @@ import org.json.JSONException
 import org.json.JSONObject
 import android.content.Intent
 import android.view.View
+import android.view.WindowManager
 import kordoghli.firas.troc.*
 import kordoghli.firas.troc.UI.HomeActivity
 import kordoghli.firas.troc.data.EndPoints
@@ -24,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
 
         val preference = SharedPrefManager(this)
         if (preference.isLoggedIn()){

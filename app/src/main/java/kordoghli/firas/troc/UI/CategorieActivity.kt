@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.ListView
 import android.widget.Toast
 import com.android.volley.Request
@@ -26,6 +27,7 @@ class CategorieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_categorie)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         val categorie = intent.getStringExtra("categorie")
         supportActionBar?.title = "categorie $categorie"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

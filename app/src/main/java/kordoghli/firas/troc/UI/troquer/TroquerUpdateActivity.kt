@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.view.View
+import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
@@ -56,6 +57,7 @@ class TroquerUpdateActivity:AppCompatActivity(), PermissionsListener, LocationEn
         super.onCreate(savedInstanceState)
         Mapbox.getInstance(applicationContext, getString(R.string.mapbox_access_token))
         setContentView(R.layout.activity_troquer_update)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         val idService = intent.getIntExtra("idService", 0)
         getServiceWithId(idService)
         getCategorie()

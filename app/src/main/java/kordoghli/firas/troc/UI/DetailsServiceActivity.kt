@@ -9,6 +9,7 @@ import android.text.TextUtils
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.ListView
 import android.widget.Toast
 import com.android.volley.AuthFailureError
@@ -31,6 +32,7 @@ class DetailsServiceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_service)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         val idService = intent.getIntExtra("id", 0)
         getServiceWithId(idService)
         getCommentaire(idService)
@@ -109,6 +111,7 @@ class DetailsServiceActivity : AppCompatActivity() {
                         builder.setNegativeButton("NON") { dialogInterface: DialogInterface, i: Int -> }
                         builder.show()
                     }
+
                     btnAddComentaire.setOnClickListener {
                         addComentaire(user.username,service.id,user.id)
                         finish()

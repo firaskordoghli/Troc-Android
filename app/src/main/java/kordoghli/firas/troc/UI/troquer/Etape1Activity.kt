@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
+import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.android.volley.Request
@@ -19,6 +20,7 @@ class Etape1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_etape_1)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         getCategorie()
         button2.setOnClickListener {
             etape1()
