@@ -35,7 +35,9 @@ class Etape2Activity : AppCompatActivity(), PermissionsListener, LocationEngineL
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val service = intent.getSerializableExtra(Etape1Activity.EXTRA_SERVICE) as ResponseClasses.Service
+
+            val service = intent.getSerializableExtra(Etape1Activity.EXTRA_SERVICE) as ResponseClasses.Service
+
 
         Mapbox.getInstance(applicationContext, getString(R.string.mapbox_access_token))
         setContentView(R.layout.activity_etape_2)
@@ -44,11 +46,6 @@ class Etape2Activity : AppCompatActivity(), PermissionsListener, LocationEngineL
         mapView.getMapAsync { mapboxMap ->
             map = mapboxMap
             enableLocation()
-            map.addMarker(
-                MarkerOptions()
-                    .position(LatLng(36.862499, 10.195556))
-                    .title("test jok")
-            )
             service.latitude=originLocation.latitude.toFloat()
             service.longitude=originLocation.longitude.toFloat()
 
@@ -62,6 +59,12 @@ class Etape2Activity : AppCompatActivity(), PermissionsListener, LocationEngineL
 
         button4.setOnClickListener {
             val intent = Intent(this, Etape3Activity::class.java)
+            intent.putExtra(EXTRA_SERVICE, service)
+            startActivity(intent)
+        }
+
+        button9.setOnClickListener {
+            val intent = Intent(this, Etape1Activity::class.java)
             intent.putExtra(EXTRA_SERVICE, service)
             startActivity(intent)
         }

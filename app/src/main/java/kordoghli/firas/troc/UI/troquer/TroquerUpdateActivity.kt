@@ -134,7 +134,7 @@ class TroquerUpdateActivity:AppCompatActivity(), PermissionsListener, LocationEn
                         9.9F
                     )
                     editText13.setText(service.titre)
-                    editText14.setText(service.categorie)
+                    editText14.setText(service.description)
 
                     supportActionBar?.title = service.titre
                     supportActionBar?.setDisplayHomeAsUpEnabled(true)

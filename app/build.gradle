@@ -46,6 +46,8 @@ dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.0'
     implementation 'com.facebook.android:facebook-login:[4,5)'
     implementation 'com.koushikdutta.ion:ion:2.+'
+    implementation 'com.stepstone.stepper:material-stepper:2.2.0'
+    implementation 'ivb.com.materialstepper:material-stepper:0.0.2'
 
 
 }

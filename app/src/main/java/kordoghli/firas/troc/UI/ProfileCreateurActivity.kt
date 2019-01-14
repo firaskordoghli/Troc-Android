@@ -109,7 +109,10 @@ class ProfileCreateurActivity : AppCompatActivity() {
     }
 
     private fun ItemClicked(item : ResponseClasses.Service) {
-        Toast.makeText(this, "Clicked: ${item.titre}", Toast.LENGTH_LONG).show()
+        //Toast.makeText(this, "Clicked: ${item.id}", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, DetailsServiceActivity::class.java)
+        intent.putExtra("id", item.id)
+        startActivity(intent)
     }
 
 

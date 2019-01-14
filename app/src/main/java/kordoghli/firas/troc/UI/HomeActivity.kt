@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
 import kordoghli.firas.troc.R
+import kordoghli.firas.troc.UI.didacticiel.DidacticielActivity
 import kordoghli.firas.troc.UI.profile.ProfileFragment
 import kordoghli.firas.troc.UI.troquer.Etape1Activity
 import kordoghli.firas.troc.UI.troquer.TroquerActivity
@@ -29,6 +30,11 @@ class HomeActivity : AppCompatActivity() {
             R.id.navigation_map -> {
                 val mapFragment = MapFragment.newInstance()
                 openFragment(mapFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.navigation_aide -> {
+                startActivity(Intent(this, DidacticielActivity::class.java))
                 return@OnNavigationItemSelectedListener true
             }
 

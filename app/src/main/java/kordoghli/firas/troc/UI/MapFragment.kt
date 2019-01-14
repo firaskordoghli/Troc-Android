@@ -81,7 +81,8 @@ class MapFragment:Fragment(), PermissionsListener, LocationEngineListener {
                                 MarkerOptions()
                                     //.position(LatLng(36.862499, 10.195556))
                                     .position(LatLng(service.longitude.toDouble(), service.latitude.toDouble()))
-                                    .title(service.titre))
+                                    .title(service.titre)
+                            )
 
                         }
                     } catch (e: JSONException) {

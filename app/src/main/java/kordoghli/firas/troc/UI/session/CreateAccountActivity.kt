@@ -13,6 +13,7 @@ import com.android.volley.toolbox.StringRequest
 import kordoghli.firas.troc.*
 import kordoghli.firas.troc.UI.HomeActivity
 import kordoghli.firas.troc.data.EndPoints
+import kordoghli.firas.troc.data.User
 import kordoghli.firas.troc.data.VolleySingleton
 import kotlinx.android.synthetic.main.activity_create_account.*
 import org.json.JSONException
@@ -73,6 +74,7 @@ class CreateAccountActivity : AppCompatActivity() {
                 try {
                     val obj = JSONObject(response)
                     Toast.makeText(applicationContext, obj.getString("message"), Toast.LENGTH_LONG).show()
+
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }

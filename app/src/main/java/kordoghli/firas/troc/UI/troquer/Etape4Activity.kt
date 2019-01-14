@@ -43,6 +43,12 @@ class Etape4Activity:AppCompatActivity() {
             }
             builder.show()
         }
+
+        button11.setOnClickListener {
+            val intent = Intent(this, Etape3Activity::class.java)
+            intent.putExtra(EXTRA_SERVICE, service)
+            startActivity(intent)
+        }
     }
 
     fun enregistrerService(service: ResponseClasses.Service){
@@ -71,5 +77,9 @@ class Etape4Activity:AppCompatActivity() {
             }
         }
         VolleySingleton.instance?.addToRequestQueue(stringRequest)
+    }
+
+    companion object {
+        const val EXTRA_SERVICE = "service"
     }
 }

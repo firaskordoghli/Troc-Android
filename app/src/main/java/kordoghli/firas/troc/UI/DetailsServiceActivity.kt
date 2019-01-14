@@ -91,6 +91,7 @@ class DetailsServiceActivity : AppCompatActivity() {
                     } else if (service.idUser.toInt() == user.id) {
                         textView14.visibility = View.GONE
                         imageView9.visibility = View.GONE
+                        btnFavoris.visibility = View.GONE
                         btnDelete.visibility = View.VISIBLE
                         btnUpdate.visibility = View.VISIBLE
                     }

@@ -64,13 +64,15 @@
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>
 
         <activity android:name=".UI.troquer.Etape2Activity"
-                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.troquer.Etape1Activity"/>
+                  android:theme="@style/AppTheme"/>
 
         <activity android:name=".UI.troquer.Etape3Activity"
-                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.troquer.Etape2Activity"/>
+                  android:theme="@style/AppTheme"/>
 
         <activity android:name=".UI.troquer.Etape4Activity"
-                  android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.troquer.Etape3Activity"/>
+                  android:theme="@style/AppTheme"/>
+
+        <activity android:name=".UI.didacticiel.DidacticielActivity"/>
 
         <activity android:name=".UI.troquer.TroquerUpdateActivity"
                   android:theme="@style/TroquThemeActionBar" android:parentActivityName=".UI.HomeActivity"/>

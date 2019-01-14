@@ -14,19 +14,42 @@ import org.json.JSONObject
 import android.content.Intent
 import android.view.View
 import android.view.WindowManager
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.Login
+import com.facebook.login.LoginResult
 import kordoghli.firas.troc.*
 import kordoghli.firas.troc.UI.HomeActivity
 import kordoghli.firas.troc.data.EndPoints
 import kordoghli.firas.troc.data.SharedPrefManager
 import kordoghli.firas.troc.data.User
 import kordoghli.firas.troc.data.VolleySingleton
+import kotlinx.android.synthetic.main.activity_create_account.*
 
 class LoginActivity : AppCompatActivity() {
+
+    var callbackManager: CallbackManager? =null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+        callbackManager = CallbackManager.Factory.create()
+        fbButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult>{
+            override fun onSuccess(result: LoginResult?) {
+                println("***************** fb login "+result?.accessToken?.token)
+                startActivity(Intent(applicationContext, HomeActivity::class.java))
+            }
 
+            override fun onCancel() {
+            }
+
+            override fun onError(error: FacebookException?) {
+
+            }
+
+        })
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         val preference = SharedPrefManager(this)
         if (preference.isLoggedIn()){
             finish()
@@ -35,6 +58,10 @@ class LoginActivity : AppCompatActivity() {
         btnConnexion.setOnClickListener {
             login()
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        callbackManager?.onActivityResult(resultCode,resultCode,data)
     }
 
     private fun login(){

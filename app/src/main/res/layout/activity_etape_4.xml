@@ -19,9 +19,10 @@
             android:textColor="@android:color/white"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/button6" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="64dp"
+            android:id="@+id/button6"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="64dp"
-            android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button11" android:layout_marginStart="16dp"/>
     <TextView
             android:text="TextView"
             android:textSize="20dp"
@@ -58,6 +59,17 @@
             android:id="@+id/imageView15"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="32dp" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView58"/>
+            android:layout_marginStart="32dp" android:layout_marginTop="108dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView58" app:layout_constraintHorizontal_bias="1.0"/>
+    <Button
+            android:textAllCaps="false"
+            android:text="Arrière"
+            android:background="#B40037"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button11" app:layout_constraintEnd_toStartOf="@+id/button6"
+            android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="64dp" android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </android.support.constraint.ConstraintLayout>
