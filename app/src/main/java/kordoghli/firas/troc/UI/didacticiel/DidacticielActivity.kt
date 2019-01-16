@@ -17,7 +17,7 @@ class DidacticielActivity: progressMobileStepper() {
         return stepperFragmentList
     }
     override fun onStepperCompleted() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        this.finish()
     }
 
 
