@@ -75,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             })*/
 
-
+/*
         fbButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(result: LoginResult) {
                 Log.v(TAG, "SUCCESS")
@@ -112,7 +112,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
         })
-
+*/
         val preference = SharedPrefManager(this)
         if (preference.isLoggedIn()) {
             finish()

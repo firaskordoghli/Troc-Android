@@ -32,11 +32,12 @@ class HomeActivity : AppCompatActivity() {
                 openFragment(mapFragment)
                 return@OnNavigationItemSelectedListener true
             }
-
+            /*
             R.id.navigation_aide -> {
                 startActivity(Intent(this, DidacticielActivity::class.java))
                 return@OnNavigationItemSelectedListener true
             }
+            */
 
             R.id.navigation_troquer -> {
                 startActivity(Intent(this, Etape1Activity::class.java))

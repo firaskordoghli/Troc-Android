@@ -20,7 +20,7 @@ class SharedPrefManager (context: Context) {
         val editor = preference.edit()
         editor.clear()
         editor.apply()
-        context.startActivity(Intent(context, LoginActivity::class.java));
+        context.startActivity(Intent(context, LoginActivity::class.java))
     }
 
     fun setUser(user: User) {
